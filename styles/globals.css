@@ -1,23 +1,36 @@
+:root {
+  --clr-primary-300: rgb(160, 189, 114);
+  --clr-primary-600: rgb(140, 107, 57);
+
+  --clr-neutral-100: rgb(255, 255, 255);
+  --clr-neutral-200: rgb(239, 239, 245);
+
+  --clr-neutral-800: rgb(53, 57, 51);
+
+  --ff-accent: Impact, "Arial Narrow Bold", sans-serif;
+  --ff-primary: Haettenschweiler, serif;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: var(--ff-accent);
 }
+
 h1 {
   font-size: 4rem;
 }
 
 p {
-  font-family: Haettenschweiler;
+  font-family: var(--ff-primary);
+  text-align: justify;
 }
 
 a {
@@ -27,4 +40,14 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+header,
+section {
+  padding: 3rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }

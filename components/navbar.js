@@ -7,7 +7,12 @@ function navbar() {
       <ul>
         <li>
           <Link href="/">
-            <a>Home</a>
+            <a>TMHNTR.com</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/about">
+            <a>About</a>
           </Link>
         </li>
         <li>
