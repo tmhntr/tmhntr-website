@@ -1,12 +1,13 @@
 import React from "react";
+import Layout from "../../components/layout";
 
-function dev() {
+function development() {
   return (
-    <div>
+    <Layout>
       <h1>Development</h1>
       <h2>Here is a sampling of my various development projects</h2>
-    </div>
+    </Layout>
   );
 }
 
-export default dev;
+export default development;

@@ -6,6 +6,20 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+h1 {
+  font-size: 4rem;
+}
+
+p {
+  font-family: Haettenschweiler;
+}
+
 a {
   color: inherit;
   text-decoration: none;
