@@ -7,7 +7,7 @@ function navbar() {
       <ul>
         <li>
           <Link href="/">
-            <a>TMHNTR.com</a>
+            <a>Home</a>
           </Link>
         </li>
         <li>

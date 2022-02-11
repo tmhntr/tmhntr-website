@@ -9,8 +9,6 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="18.727808mm"
-   height="15.619429mm"
    viewBox="0 0 18.727808 15.619429"
    version="1.1"
    id="svg873"
@@ -71,7 +69,7 @@
              id="g935">
             <g
                style="stroke:#de8787;stroke-opacity:1"
-               id="g1933"
+               id="brain-left"
                transform="translate(-8.5618358,61.660952)">
               <path
                  sodipodi:nodetypes="zzzzzzzzzzzzzzczzzzzzzzzzzzzzzzzzzzzzzz"
@@ -241,7 +239,7 @@
             </g>
             <g
                style="stroke:#de8787;stroke-opacity:1"
-               id="g1933-6"
+               id="brain-right"
                transform="matrix(-1,0,0,1,307.16274,61.660952)">
               <path
                  sodipodi:nodetypes="zzzzzzzzzzzzzzczzzzzzzzzzzzzzzzzzzzzzzz"

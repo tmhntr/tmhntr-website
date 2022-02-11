@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
+import { FaBars } from "react-icons/fa";
+
 import Navbar from "./navbar";
 
 const layout = ({ children }) => {
+  const [displayNav, setDisplayNav] = useState(false);
+
   return (
     <>
-      <Navbar></Navbar>
-      {children}
+      <header>
+        <div>
+          <div className="nav-btn" onClick={() => setDisplayNav(!displayNav)}>
+            <FaBars />
+          </div>
+          <h1>TMHNTR</h1>
+        </div>
+        {displayNav && <Navbar />}
+      </header>
+      <main>{children}</main>
     </>
   );
 };

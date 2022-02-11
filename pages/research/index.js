@@ -4,12 +4,8 @@ import Layout from "../../components/layout";
 function research() {
   return (
     <Layout>
-      <header>
-        <h1>Research</h1>
-      </header>
-      <main>
-        <h2>Research projects I have contributed to</h2>
-      </main>
+      <h1>Research</h1>
+      <h2>Research projects I have contributed to</h2>
     </Layout>
   );
 }

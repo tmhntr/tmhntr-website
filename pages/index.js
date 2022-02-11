@@ -5,17 +5,16 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Tim Hunter Portfolio</title>
         <meta name="description" content="A portfolio page by Tim Hunter" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header>
+      <Layout>
         <h1>Tim Hunter</h1>
         <p>scientist and software developer</p>
-      </header>
-      <main></main>
-    </Layout>
+      </Layout>
+    </>
   );
 }
