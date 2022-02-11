@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../components/layout";
 
-function research() {
+function Research() {
   return (
     <Layout>
       <h1>Research</h1>
@@ -10,4 +10,4 @@ function research() {
   );
 }
 
-export default research;
+export default Research;

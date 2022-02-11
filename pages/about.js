@@ -7,7 +7,7 @@ import utilStyles from "../styles/utils.module.css";
 
 import BrainSVG from "../public/brain.svg";
 
-const about = () => {
+const About = () => {
   const brainImageSize = 200;
   return (
     <Layout>
@@ -62,4 +62,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

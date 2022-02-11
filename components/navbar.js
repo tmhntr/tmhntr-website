@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-function navbar() {
+function Navbar() {
   return (
     <nav>
       <ul>
@@ -30,4 +30,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;

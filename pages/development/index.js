@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../components/layout";
 
-function development() {
+function Development() {
   return (
     <Layout>
       <h1>Development</h1>
@@ -10,4 +10,4 @@ function development() {
   );
 }
 
-export default development;
+export default Development;

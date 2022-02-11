@@ -4,7 +4,7 @@ import { FaBars } from "react-icons/fa";
 
 import Navbar from "./navbar";
 
-const layout = ({ children }) => {
+const Layout = ({ children }) => {
   const [displayNav, setDisplayNav] = useState(false);
 
   return (
@@ -23,4 +23,4 @@ const layout = ({ children }) => {
   );
 };
 
-export default layout;
+export default Layout;
