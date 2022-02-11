@@ -4,8 +4,12 @@ import Layout from "../../components/layout";
 function development() {
   return (
     <Layout>
-      <h1>Development</h1>
-      <h2>Here is a sampling of my various development projects</h2>
+      <header>
+        <h1>Development</h1>
+      </header>
+      <main>
+        <h2>Software projects that I have worked on.</h2>
+      </main>
     </Layout>
   );
 }
