@@ -44,9 +44,54 @@ a {
 
 * {
   box-sizing: border-box;
+  z-index: 1;
 }
 
-section {
+.particles {
+  position: fixed;
+  width: 100%;
+  z-index: 0;
+}
+.page {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.page-about {
+  background-color: black;
+}
+
+.hero h1 {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+
+  text-shadow: 0px 0px 6px #ffffff;
+}
+
+.hero p {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+.page-research {
+  background-color: blue;
+}
+
+.page section {
   padding: 3rem;
 }
 
