@@ -1,152 +1,87 @@
-import Head from "next/head";
-import Image from "next/image";
-import Layout from "../components/layout";
-import styles from "../styles/Home.module.css";
-import Particles from "react-tsparticles";
+import Particles from "../components/Particles";
+import ReactFullpage from "@fullpage/react-fullpage";
+import ContactForm from "../components/ContactForm";
 
 export default function Home() {
-  const particleOptions = {
-    background: {
-      color: {
-        value: "#000",
-      },
-      opacity: 0,
-    },
-    fullScreen: true,
-    particles: {
-      color: {
-        value: "#ffffff",
-      },
-      opacity: {
-        value: 0,
-        random: false,
-      },
-      shape: {
-        type: "polygon",
-        polygon: {
-          sides: 4,
-          fill: false,
-          closed: true,
-        },
-      },
-      number: {
-        value: 80,
-        density: {
-          enable: true,
-          area: 800,
-        },
-      },
-      stroke: {
-        width: 1,
-        color: "#ffffff",
-        opacity: 0.4,
-      },
-      size: {
-        value: 6,
-        random: true,
-      },
-      lineLinked: {
-        enable: true,
-        distance: 100,
-        color: "#ffffff",
-        opacity: 0.4,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 2,
-        direction: "none",
-        random: false,
-        straight: false,
-        outMode: "out",
-        bounce: false,
-        gravity: {
-          enable: false,
-          acceleration: 9.0,
-          maxSpeed: 50,
-        },
-        attract: {
-          enable: true,
-          rotate: {
-            x: 600,
-            y: 600,
-          },
-        },
-      },
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: {
-          enable: false,
-          mode: "grab",
-        },
-        onclick: {
-          enable: true,
-          mode: "push",
-        },
-        resize: true,
-      },
-      modes: {
-        grab: {
-          distance: 400,
-          lineLinked: {
-            opacity: 1,
-          },
-        },
-        bubble: {
-          distance: 400,
-          size: 40,
-          duration: 2,
-          opacity: 8,
-          speed: 3,
-        },
-        repulse: {
-          distance: 200,
-          duration: 0.4,
-        },
-        push: {
-          particlesNb: 4,
-        },
-        remove: {
-          particlesNb: 2,
-        },
-      },
-    },
-    retinaDetect: false,
+  const sectionsColors = [
+    "#0912792e",
+    "#a30f0f69",
+    "#54aa283d",
+    "#740fa35c",
+    "#0f84a35c",
+  ];
+  const onLeave = (origin, destination, direction) => {
+    console.log("onLeave", { origin, destination, direction });
+    // arguments are mapped in order of fullpage.js callback arguments do something
+    // with the event
   };
 
   return (
     <>
-      <Head>
-        <title>Tim Hunter Portfolio</title>
-        <meta name="description" content="A portfolio page by Tim Hunter" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Particles className="particles" options={particleOptions} />
-      <div className="page-about page">
-        <div className="hero">
-          <h1>Hi, I'm Tim Hunter</h1>
-          <p>Researcher, Developer, Tutor.</p>
-          <p> Interested in working together? Contact me!</p>
-        </div>
-      </div>
-      <div className="page-research page">
-        <h1>Tim Hunter</h1>
-        <p>scientist and software developer</p>
-      </div>
-      <div className="page-development page">
-        <h1>Tim Hunter</h1>
-        <p>scientist and software developer</p>
-      </div>
-      <div className="page-tutoring page">
-        <h1>Tim Hunter</h1>
-        <p>scientist and software developer</p>
-      </div>
-      <div className="page-contact page">
-        <h1>Tim Hunter</h1>
-        <p>scientist and software developer</p>
-      </div>
+      <Particles />
+      <ReactFullpage
+        navigation
+        onLeave={onLeave}
+        // scrollHorizontally = {true}
+        sectionsColor={sectionsColors}
+        render={({ fullpageApi }) =>
+          console.log("render prop change") || (
+            <ReactFullpage.Wrapper>
+              <div className="section">
+                <div class="hero">
+                  <h1>Hi, I'm Tim Hunter</h1>
+                  <u onClick={() => fullpageApi.moveTo(2)}>Researcher</u>,{" "}
+                  <u onClick={() => fullpageApi.moveTo(3)}>developer</u>,
+                  {" and "}
+                  <u onClick={() => fullpageApi.moveTo(4)}>Tutor</u>
+                  <br />
+                  {"Want to work together? "}
+                  <u onClick={() => fullpageApi.moveTo(5)}>contact me!</u>
+                </div>
+              </div>
+              <div className="section">
+                <div class="hero">
+                  <h1>Research</h1>
+                  <p>
+                    I am a computational researcher focused on medical
+                    applications of high performance computational resources.
+                  </p>
+                  <p>
+                    Currently I research the impacts of atrial fibrillation on
+                    cerebral blood circulation.
+                  </p>
+                </div>
+              </div>
+              <div className="section">
+                <div class="hero">
+                  <h1>Software development</h1>
+                  <p>
+                    I am primarily a web developer. I develop sites for small
+                    businesses and individuals.
+                  </p>
+
+                  <p>I currently use Javascript, Python, and C++.</p>
+                </div>
+              </div>
+              <div className="section">
+                <div class="hero">
+                  <h1>Tutoring</h1>
+                  <p>
+                    I offer tutoring for high-school and undergraduate students
+                    in math, physics and computer science.
+                  </p>
+                </div>
+              </div>
+              <div className="section">
+                <div class="hero contact">
+                  <h1>contact:</h1>
+                  <ContactForm />
+                </div>
+              </div>
+            </ReactFullpage.Wrapper>
+          )
+        }
+      />
     </>
   );
 }
