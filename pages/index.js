@@ -28,8 +28,8 @@ export default function Home() {
           console.log("render prop change") || (
             <ReactFullpage.Wrapper>
               <div className="section">
-                <div class="hero">
-                  <h1>Hi, I'm Tim Hunter</h1>
+                <div className="hero">
+                  <h1>Hi, I&apos;m Tim Hunter</h1>
                   <u onClick={() => fullpageApi.moveTo(2)}>Researcher</u>,{" "}
                   <u onClick={() => fullpageApi.moveTo(3)}>developer</u>,
                   {" and "}
@@ -40,7 +40,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="section">
-                <div class="hero">
+                <div className="hero">
                   <h1>Research</h1>
                   <p>
                     I am a computational researcher focused on medical
@@ -53,7 +53,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="section">
-                <div class="hero">
+                <div className="hero">
                   <h1>Software development</h1>
                   <p>
                     I am primarily a web developer. I develop sites for small
@@ -64,7 +64,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="section">
-                <div class="hero">
+                <div className="hero">
                   <h1>Tutoring</h1>
                   <p>
                     I offer tutoring for high-school and undergraduate students
@@ -73,7 +73,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="section">
-                <div class="hero contact">
+                <div className="hero contact">
                   <h1>contact:</h1>
                   <ContactForm />
                 </div>
