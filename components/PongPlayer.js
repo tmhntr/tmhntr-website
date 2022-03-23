@@ -1,8 +1,8 @@
 import React from "react";
 import { Pong } from "@tmhntr/react-pong";
 
-const PongPlayer = ({ address }) => {
-  console.log(address);
+const PongPlayer = (props) => {
+  const { address } = props;
   return <Pong wsAddress={address}></Pong>;
 };
 
