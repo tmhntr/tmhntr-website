@@ -1,6 +1,7 @@
 import Particles from "../components/Particles";
 import ReactFullpage from "@fullpage/react-fullpage";
 import ContactForm from "../components/ContactForm";
+import Link from "next/link";
 
 export default function Home() {
   const sectionsColors = [
@@ -31,7 +32,7 @@ export default function Home() {
                 <div className="hero">
                   <h1>Hi, I&apos;m Tim Hunter</h1>
                   <u onClick={() => fullpageApi.moveTo(2)}>Researcher</u>,{" "}
-                  <u onClick={() => fullpageApi.moveTo(3)}>developer</u>,
+                  <u onClick={() => fullpageApi.moveTo(3)}>Developer</u>,
                   {" and "}
                   <u onClick={() => fullpageApi.moveTo(4)}>Tutor</u>
                   <br />
@@ -54,13 +55,15 @@ export default function Home() {
               </div>
               <div className="section">
                 <div className="hero">
-                  <h1>Software development</h1>
+                  <h1>Software Development</h1>
                   <p>
                     I am primarily a web developer. I develop sites for small
                     businesses and individuals.
                   </p>
-
                   <p>I currently use Javascript, Python, and C++.</p>
+                  <Link href={"/development"}>
+                    <a>Check out my projects -{">"}</a>
+                  </Link>
                 </div>
               </div>
               <div className="section">
