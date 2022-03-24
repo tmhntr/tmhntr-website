@@ -3,6 +3,17 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import ContactForm from "../components/ContactForm";
 import Link from "next/link";
 
+const Page = (props) => {
+  return (
+    <div className="section">
+      <div className="hero">
+        <h1>{props.heading}</h1>
+        {props.blurb}
+      </div>
+    </div>
+  );
+};
+
 export default function Home() {
   const sectionsColors = [
     "#0912792e",
@@ -28,59 +39,57 @@ export default function Home() {
         render={({ fullpageApi }) =>
           console.log("render prop change") || (
             <ReactFullpage.Wrapper>
-              <div className="section">
-                <div className="hero">
-                  <h1>Hi, I&apos;m Tim Hunter</h1>
-                  <u onClick={() => fullpageApi.moveTo(2)}>Researcher</u>,{" "}
-                  <u onClick={() => fullpageApi.moveTo(3)}>Developer</u>,
-                  {" and "}
-                  <u onClick={() => fullpageApi.moveTo(4)}>Tutor</u>
-                  <br />
-                  {"Want to work together? "}
-                  <u onClick={() => fullpageApi.moveTo(5)}>contact me!</u>
-                </div>
-              </div>
-              <div className="section">
-                <div className="hero">
-                  <h1>Research</h1>
-                  <p>
+              <Page
+                heading={"Hi, I'm Tim Hunter"}
+                blurb={
+                  <>
+                    <u onClick={() => fullpageApi.moveTo(2)}>Researcher</u>,{" "}
+                    <u onClick={() => fullpageApi.moveTo(3)}>Developer</u>,
+                    {" and "}
+                    <u onClick={() => fullpageApi.moveTo(4)}>Tutor</u>
+                    <br />
+                    {"Want to work together? "}
+                    <u onClick={() => fullpageApi.moveTo(5)}>contact me!</u>
+                  </>
+                }
+              />
+              <Page
+                heading={"Research"}
+                blurb={
+                  <>
                     I am a computational researcher focused on medical
-                    applications of high performance computational resources.
-                  </p>
-                  <p>
-                    Currently I research the impacts of atrial fibrillation on
-                    cerebral blood circulation.
-                  </p>
-                </div>
-              </div>
-              <div className="section">
-                <div className="hero">
-                  <h1>Software Development</h1>
-                  <p>
+                    applications of high performance computational
+                    resources\nCurrently I research the impacts of atrial
+                    fibrillation on cerebral blood circulation.
+                  </>
+                }
+              />
+              <Page
+                heading={"Software Development"}
+                blurb={
+                  <>
                     I am primarily a web developer. I develop sites for small
                     businesses and individuals.
-                  </p>
-                  <p>I currently use Javascript, Python, and C++.</p>
-                  <Link href={"/development"}>
-                    <a>Check out my projects -{">"}</a>
-                  </Link>
-                </div>
-              </div>
-              <div className="section">
-                <div className="hero">
-                  <h1>Tutoring</h1>
-                  <p>
+                    <br />
+                    I currently use Javascript, Python, and C++.
+                    <br />
+                    <Link href={"/development"}>
+                      <a>Check out my projects -{">"}</a>
+                    </Link>
+                  </>
+                }
+              />
+
+              <Page
+                heading={"Tutoring"}
+                blurb={
+                  <>
                     I offer tutoring for high-school and undergraduate students
                     in math, physics and computer science.
-                  </p>
-                </div>
-              </div>
-              <div className="section">
-                <div className="hero contact">
-                  <h1>contact:</h1>
-                  <ContactForm />
-                </div>
-              </div>
+                  </>
+                }
+              />
+              <Page heading={"Contact"} blurb={<ContactForm />} />
             </ReactFullpage.Wrapper>
           )
         }
