@@ -1,4 +1,5 @@
 import Particles from "react-tsparticles";
+import styles from "../styles/Particles.module.css";
 
 const ParticleBackground = () => {
   const particleOptions = {
@@ -29,7 +30,7 @@ const ParticleBackground = () => {
         value: 80,
         density: {
           enable: true,
-          area: 800,
+          area: 2000,
         },
       },
       stroke: {
@@ -111,7 +112,7 @@ const ParticleBackground = () => {
     },
     retinaDetect: false,
   };
-  return <Particles className="particles" options={particleOptions} />;
+  return <Particles className={styles.particles} options={particleOptions} />;
 };
 
 export default ParticleBackground;
