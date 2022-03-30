@@ -1,22 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs, { init } from "@emailjs/browser";
 import styles from "../styles/ContactForm.module.css";
 
-const FORM_ENDPOINT = "/"; // TODO - fill on the later step
+init("rbUxuh4rKFosYMHeQ");
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = (e) => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    if (confirm("Are you sure you want to submit?")) {
-      // yes
-      setTimeout(() => {
-        setSubmitted(true);
-      }, 100);
-      return true;
-    } else {
-      // Do nothing!
-      return false;
-    }
+
+    emailjs
+      .sendForm(
+        process.env.EMAILJS_SERVICE_ID,
+        process.env.EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.EMAILJS_USER_ID
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setSubmitted(true);
   };
 
   return submitted ? (
@@ -25,23 +35,17 @@ const ContactForm = () => {
       <div className="text-md">We&apos;ll be in touch soon.</div>
     </>
   ) : (
-    <form
-      //   action={FORM_ENDPOINT}
-      onSubmit={handleSubmit}
-      method="POST"
-      target="_self"
-      className={styles.form}
-    >
+    <form ref={form} onSubmit={sendEmail} className={styles.form}>
       <input
         type="text"
         className={`${styles.name} ${styles.formEntry}`}
         placeholder="Name"
-        name="name"
+        name="from_name"
         required
       />
       <input
         type="email"
-        name="email"
+        name="reply_to"
         className={`${styles.email} ${styles.formEntry}`}
         placeholder="Email"
         required
@@ -49,10 +53,13 @@ const ContactForm = () => {
       <textarea
         className={`${styles.message} ${styles.formEntry}`}
         placeholder="Message"
+        name="message"
       ></textarea>
-      <button className={`${styles.submit} ${styles.formEntry}`} type="submit">
-        Send a message
-      </button>
+      <input
+        className={`${styles.submit} ${styles.formEntry}`}
+        type="submit"
+        value="Send"
+      ></input>
     </form>
   );
 };
