@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Particles from "../../components/Particles";
-import { Button } from "rsuite";
+import { Radio, RadioGroup, Form } from "rsuite";
 import DevLayout from "../../components/DevLayout";
 import utilStyles from "../../styles/utils.module.css";
 import styles from "../../styles/DevPages.module.css";
@@ -14,15 +14,25 @@ const PongPage = () => {
     },
     { ssr: false }
   );
+  const handleRadioChange = (value, event) => {
+    value === "PvP" ? setIsML(false) : setIsML(true);
+  };
   return (
     <div>
       <Particles />
       <DevLayout
         showcase={
-          <>
-            <Pong address={isML ? "ws://ml.tmhntr.com:80" : null} />
-            <Button onClick={() => setIsML(!isML)}>Toggle ml</Button>
-          </>
+          <div>
+            <Pong
+              address={isML ? process.env.PONGML_WEBSOCKET_ADDRESS : null}
+            />
+            <div className={`${utilStyles.cardContainer}`}>
+              <RadioGroup name="radioList" inline onChange={handleRadioChange}>
+                <Radio value="PvP">Player vs player</Radio>
+                <Radio value="MvP">Machine vs player</Radio>
+              </RadioGroup>
+            </div>
+          </div>
         }
         title={"Pong"}
         githubURL={"https://github.com/tmhntr/react-pong"}
